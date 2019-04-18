@@ -1,0 +1,2 @@
+include ':pilgrimsdk-extension'
+include ':sampleapp'

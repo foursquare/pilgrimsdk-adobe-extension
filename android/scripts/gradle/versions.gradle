@@ -1,0 +1,32 @@
+ext.versions = [
+    sdk: [
+        min: 15,
+        target: 22,
+        compile: 27,
+        effectiveMin: 16,
+        sampleTarget: 28
+    ],
+    kotlin: "1.3.21",
+    supportLib: "27.1.1",
+    pilgrimSdk: "2.2.0"
+]
+
+ext.deps = [
+    adobe: [
+        core: 'com.adobe.marketing.mobile:sdk-core:1.2.1',
+        analytics: 'com.adobe.marketing.mobile:analytics:1.1.1',
+        profile: 'com.adobe.marketing.mobile:userprofile:1.0.1'
+    ],
+    android: [
+        plugin: 'com.android.tools.build:gradle:3.1.3', // MUST be updated in sync with the versions.lint version, which must be 23.0.0 higher than this.
+    ],
+    junit: 'junit:junit:4.12',
+    kotlin: [
+        plugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+        stdlib: "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin",
+    ],
+    pilgrim: [
+        pilgrimSdk: "com.foursquare:pilgrimsdk:$versions.pilgrimSdk",
+        pilgrimSdkDebugging: "com.foursquare:pilgrimsdk-debugging:$versions.pilgrimSdk"
+    ]
+]

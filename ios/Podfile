@@ -1,0 +1,7 @@
+platform :ios, '10.0'    
+use_frameworks!
+
+target 'PilgrimAdobeExtension' do 
+    pod 'ACPCore', '~> 2.1.1'
+    pod 'Pilgrim', '~> 2.2.0'
+end

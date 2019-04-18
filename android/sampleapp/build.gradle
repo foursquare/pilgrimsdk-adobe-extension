@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion versions.sdk.compile
+
+    defaultConfig {
+        applicationId "com.foursquare.pilgrimsdk.sampleapp"
+        minSdkVersion 16
+        targetSdkVersion 28
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0"
+
+        proguardFiles(
+                getDefaultProguardFile('proguard-android.txt'),
+        )
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+
+            shrinkResources true
+            useProguard true
+            minifyEnabled true
+        }
+        debug {
+            ext.enableCrashlytics = false
+            applicationIdSuffix ".debug"
+
+            shrinkResources false
+            useProguard true
+            minifyEnabled false
+
+            matchingFallbacks = ["release"]
+
+            testCoverageEnabled true
+        }
+    }
+
+    lintOptions {
+        textReport true
+        textOutput 'stdout'
+        checkReleaseBuilds true
+        fatal 'UnusedResources'
+        ignore 'SelectableText'
+        baseline file("lint-baseline.xml")
+        checkAllWarnings true
+        warningsAsErrors true
+        abortOnError true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    debugImplementation project(':pilgrimsdk-extension')
+
+    implementation 'com.adobe.marketing.mobile:sdk-core:1.3.0'
+    implementation 'com.adobe.marketing.mobile:userprofile:1.0.1'
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}

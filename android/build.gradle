@@ -1,0 +1,46 @@
+buildscript {
+    ext.kotlin_version = '1.3.21'
+
+    apply from: "${rootDir}/scripts/gradle/versions.gradle"
+
+    dependencies {
+        classpath deps.android.plugin
+        classpath deps.kotlin.plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://foursquare.jfrog.io/foursquare/libs-public/' }
+        maven { url "https://jitpack.io" }
+    }
+
+    // Force all of the primary support libraries to use the same version.
+    // Thanks Jake Wharton:
+    // https://github.com/JakeWharton/SdkSearch/blob/e30da4a73c76693c9c3bde0d7aa36ebe9e38521f/build.gradle#L133-L143
+    configurations.all {
+        resolutionStrategy {
+            eachDependency { details ->
+                if (details.requested.toString().contains("multidex")) {
+                    // ignore
+                } else if (details.requested.group == 'com.android.support') {
+                    details.useVersion versions.supportLib
+                }
+                if (details.requested.group == 'android.arch.core'
+                        && !details.requested.name.contains('android.arch.core') ) {
+                    details.useVersion "1.1.0"
+                }
+            }
+        }
+    }
+}
