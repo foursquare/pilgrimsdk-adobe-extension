@@ -1,0 +1,516 @@
+{
+  "displayName": "Pilgrim SDK",
+  "name": "pilgrim-sdk",
+  "platform": "mobile",
+  "version": "2.2.0",
+  "description": "Install and configure Foursquare's Pilgrim SDK to get contextual location events to use for your apps.",
+  "author": {
+    "name": "Foursquare Labs Inc."
+  },
+  "repositories": [
+    {
+      "className": "com.foursquare.pilgrimsdk.adobe.PilgrimExtension",
+      "artifact": "com.foursquare:adobe-pilgrim-extension:2.2.0"
+    },
+    {
+      "name": "PilgrimAdobeExtension",
+      "headerName": "PilgrimAdobeExtension/PilgrimAdobeExtension.h",
+      "interface": "PilgrimAdobeExtension",
+      "version": "2.2.0"
+    }
+  ],
+  "viewBasePath": "src/view/",
+  "configuration": {
+    "viewPath": "configuration/configuration.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "events": [
+    {
+      "displayName": "Place Arrival",
+      "name": "place-arrival",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventConditions"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Place Departure",
+      "name": "place-departure",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventConditions"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Place Historical",
+      "name": "place-historical",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventConditions"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Geofence Enter",
+      "name": "geofence-enter",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventConditions"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Geofence Dwell",
+      "name": "geofence-dwell",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventConditions"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Geofence Exit",
+      "name": "geofence-exit",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventConditions"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Geofence Confirmed",
+      "name": "geofence-confirm",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventConditions"
+          }
+        ]
+      }
+    }
+  ],
+  "dataElements": [
+    {
+      "displayName": "Venue ID",
+      "name": "venue-id",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Address",
+      "name": "address",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Category Ids",
+      "name": "category-ids",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "City",
+      "name": "city",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Confidence",
+      "name": "confidence",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "country",
+      "name": "country",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Event Latitude",
+      "name": "event-lat",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Event Longitude",
+      "name": "event-lng",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Geofence Latitude",
+      "name": "geofence-lat",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Geofence Longitude",
+      "name": "geofence-lng",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Latitude",
+      "name": "lat",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Longitude",
+      "name": "lng",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Location Type",
+      "name": "location-type",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Partner Venue Id",
+      "name": "partner-venue-id",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Primary Category Id",
+      "name": "primary-category-id",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Primary Category Name",
+      "name": "primary-category-name",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Primary Chain Id",
+      "name": "primary-chain-id",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Primary Chain Name",
+      "name": "primary-chain-name",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "State",
+      "name": "state",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Supervenue Id",
+      "name": "supervenue-id",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Supervenue Name",
+      "name": "supervenue-name",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Supervenue Primary Category Id",
+      "name": "supervenue-primary-category-id",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Supervenue Primary Chain Id",
+      "name": "supervenue-primary-chain-id",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Supervenue Primary Category Name",
+      "name": "supervenue-primary-category-name",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Supervenue Primary Chain Name",
+      "name": "supervenue-primary-chain-name",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Venue Name",
+      "name": "venue-name",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Visit Id",
+      "name": "visit-id",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Zipcode",
+      "name": "zipcode",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Geofence Name",
+      "name": "geofence-name",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    },
+    {
+      "displayName": "Geofence Id",
+      "name": "geofence-id",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
+          }
+        ]
+      }
+    }
+  ]
+}

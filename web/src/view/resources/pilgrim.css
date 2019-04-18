@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    font-family: Montserrat;
+}
+
+span {
+    position: relative;
+    display: block;
+}
+
+a:link {
+    color: #009fdf;
+}
+
+a:visited {
+    color: #009fdf;
+}
+
+.page-bg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #f5f6f8;
+    display: flex;
+}
+
+.pop-container {
+    width: 734px;
+    height: 368px;
+    margin: 50px 50px;
+    border-radius: 8px;
+    border-spacing: 0;
+    padding: 0;
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.17);
+    background-color: #ffffff;
+    vertical-align: middle;
+}
+
+.text-container {
+    padding: 15px;
+}
+
+.title-text {
+    width: auto;
+    height: 23px;
+    font-size: 19px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    color: #2c3e51;
+}
+
+.pilgrim-id-key {
+    width: auto;
+    height: 18px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    color: #3f4a56;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.text-boxes {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #c1e4fe;
+    background-color: #ffffff;
+}
+
+.gray-i {
+    display: inline-block;
+    height: 10px;
+    font-size: 10px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #7e848c;
+}
+
+#img-td {
+    background-image: url("./static/Phone illustration.svg");
+    background-color: rgba(0, 159, 223, 0.09);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px 0 0 10px ;
+    width: 301px;
+    height: 375px;
+    display: block;
+
+}
+
+.debug-mode {
+    width: auto;
+    height: 16px;
+    margin-top: 34px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
+    color: #3f4a56;
+}
+
+.debug-mode-text {
+    padding: 7px;
+    height: 32px;
+    width: 330px;
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #7e848c;
+    border-radius: 2px;
+    border: dashed 1px #c1e4fe;
+}
+
+.placeholders {
+    padding-left:10px;
+    font-size: 13px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #7e848c;
+}
+
+.checkbox {
+    width: 12px;
+    height: 13px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #009fdf;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    transition:visibility 0.3s linear;
+    visibility: hidden;
+    font-size: 11px;
+    line-height: 1.6em;
+    width: 500px;
+    background-color: #ffffff;
+    color: #7e848c;
+    text-align: left;
+    padding: 10px;
+    border: solid 1px #c1e4fe;
+
+    position: absolute;
+    z-index: 100;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
