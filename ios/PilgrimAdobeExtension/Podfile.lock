@@ -1,0 +1,22 @@
+PODS:
+  - ACPCore (2.1.1):
+    - ACPCore/iOS (= 2.1.1)
+  - ACPCore/iOS (2.1.1)
+  - Pilgrim (2.2.0)
+
+DEPENDENCIES:
+  - ACPCore (~> 2.1.1)
+  - Pilgrim (~> 2.2.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ACPCore
+    - Pilgrim
+
+SPEC CHECKSUMS:
+  ACPCore: c8e84e0cee204364399dba968133cfa31b71e00b
+  Pilgrim: cd4d1f639618ac6e73e094848e83ef7d74cad645
+
+PODFILE CHECKSUM: 6304e9dca90dd0e2178e9d4229cbaecc4e68d4bb
+
+COCOAPODS: 1.5.3
