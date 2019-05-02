@@ -1,115 +1,107 @@
-//
-//  PilgrimConstants.m
-//  PilgrimAdobeExtension
-//
-//  Created by Carlos Reyes  on 4/15/19.
 //  Copyright © 2019 Foursquare. All rights reserved.
-//
 
 #import "PilgrimConstants.h"
 
-@implementation PilgrimConstants
-NSString *const address = @"address";
+NSString *const ADDRESS = @"address";
 
-NSString *const arrival = @"arrival";
+NSString *const ARRIVAL = @"arrival";
 
-NSString *const arrivalEventName = @"place-arrival";
+NSString *const ARRIVAL_EVENT_NAME = @"place-arrival";
 
-NSString *const arrivalEventType = @"com.foursquare.visit.arrival";
+NSString *const ARRIVAL_EVENT_TYPE = @"com.foursquare.visit.arrival";
 
-NSString *const catergoryIds = @"catergory-ids";
+NSString *const CATERGORY_IDS = @"catergory-ids";
 
-NSString *const city = @"city";
+NSString *const CITY = @"city";
 
-NSString *const confidence = @"confidence";
+NSString *const CONFIDENCE = @"confidence";
 
-NSString *const country = @"country";
+NSString *const COUNTRY = @"country";
 
-NSString *const crossStreet = @"crossStreet";
+NSString *const CROSSSTREET = @"crossStreet";
 
-NSString *const departure = @"departure";
+NSString *const DEPARTURE = @"departure";
 
-NSString *const departureEventName = @"place-departure";
+NSString *const DEPARTURE_EVENT_NAME = @"place-departure";
 
-NSString *const departureEventType = @"com.foursquare.visit.departure";
+NSString *const DEPARTURE_EVENT_TYPE = @"com.foursquare.visit.departure";
 
-NSString *const eventLat = @"event-lat";
+NSString *const EVENT_LAT = @"event-lat";
 
-NSString *const eventLng = @"event-lng";
+NSString *const EVENT_LNG = @"event-lng";
 
-NSString *const eventSource = @"com.foursquare.pilgrim";
+NSString *const EVENT_SOURCE = @"com.foursquare.pilgrim";
 
-NSString *const geofenceEventType = @"geofence-event-type";
+NSString *const GEOFENCE_EVENT_TYPE = @"geofence-event-type";
 
-NSString *const geofenceEnterEventName = @"Geofence-enter-event";
+NSString *const GEOFENCE_ENTER_EVENT_NAME = @"Geofence-enter-event";
 
-NSString *const geofenceEnterEventType = @"com.foursquare.geofence.enter";
+NSString *const GEOFENCE_ENTER_EVENT_TYPE = @"com.foursquare.geofence.enter";
 
-NSString *const geofenceDwellEventName = @"Geofence-dwell-event";
+NSString *const GEOFENCE_DWELL_EVENT_NAME = @"Geofence-dwell-event";
 
-NSString *const geofenceDwellEventType = @"com.foursquare.geofence.dwell";
+NSString *const GEOFENCE_DWELL_EVENT_TYPE = @"com.foursquare.geofence.dwell";
 
-NSString *const geofenceConfirmEventName = @"geofence-confirm-event";
+NSString *const GEOFENCE_CONFIRM_EVENT_NAME = @"geofence-confirm-event";
 
-NSString *const geofenceConfirmEventType = @"com.foursquare.geofence.confirm";
+NSString *const GEOFENCE_CONFIRM_EVENT_TYPE = @"com.foursquare.geofence.confirm";
 
-NSString *const geofenceExitEventName = @"geofence-exit-event";
+NSString *const GEOFENCE_EXIT_EVENT_NAME = @"geofence-exit-event";
 
-NSString *const geofenceExitEventType = @"com.foursquare.geofence.exit";
+NSString *const GEOFENCE_EXIT_EVENT_TYPE = @"com.foursquare.geofence.exit";
 
-NSString *const geofenceLat = @"geofence-lat";
+NSString *const GEOFENCE_LAT = @"geofence-lat";
 
-NSString *const geofenceLng = @"geofence-lng";
+NSString *const GEOFENCE_LNG = @"geofence-lng";
 
-NSString *const historical = @"historical";
+NSString *const HISTORICAL = @"historical";
 
-NSString *const historicalEventName = @"place-historical";
+NSString *const HISTORICAL_EVENT_NAME = @"place-historical";
 
-NSString *const historicalEventType = @"com.foursquare.pilgrim.visit.historical";
+NSString *const HISTORICAL_EVENT_TYPE = @"com.foursquare.pilgrim.visit.historical";
 
-NSString *const lat = @"lat";
+NSString *const LAT = @"lat";
 
-NSString *const lng = @"lng";
+NSString *const LNG = @"lng";
 
-NSString *const locationType = @"location-type";
+NSString *const LOCATION_TYPE = @"location-type";
 
-NSString *const partnerVenueId = @"partner-venue-id";
+NSString *const PARTNER_VENUE_ID = @"partner-venue-id";
 
-NSString *const primaryCategoryId = @"primary-category-id";
+NSString *const PRIMARY_CATEGORY_ID = @"primary-category-id";
 
-NSString *const primaryCategoryName = @"primary-category-name";
+NSString *const PRIMARY_CATEGORY_NAME = @"primary-category-name";
 
-NSString *const primaryChainId = @"primary-chain-id";
+NSString *const PRIMARY_CHAIN_ID = @"primary-chain-id";
 
-NSString *const primaryChainName = @"primary-chain-name";
+NSString *const PRIMARY_CHAIN_NAME = @"primary-chain-name";
 
-NSString *const probability = @"probability";
+NSString *const PROBABILITY = @"probability";
 
-NSString *const radius = @"radius";
+NSString *const RADIUS = @"radius";
 
-NSString *const state = @"state";
+NSString *const STATE = @"state";
 
-NSString *const supervenueId = @"supervenue-id";
+NSString *const SUPERVENUE_ID = @"supervenue-id";
 
-NSString *const supervenueName = @"supervenue-name";
+NSString *const SUPERVENUE_NAME = @"supervenue-name";
 
-NSString *const supervenuePrimaryCategoryId = @"supervenue-primary-category-id";
+NSString *const SUPERVENUE_PRIMARY_CATEGORY_ID = @"supervenue-primary-category-id";
 
-NSString *const supervenuePrimaryCategoryName = @"supervenue-primary-category-name";
+NSString *const SUPERVENUE_PRIMARY_CATEGORY_NAME = @"supervenue-primary-category-name";
 
-NSString *const timestamp = @"timestamp";
+NSString *const TIMESTAMP = @"timestamp";
 
-NSString *const venueId = @"venue-id";
+NSString *const VENUE_ID = @"venue-id";
 
-NSString *const venueName = @"venue-name";
+NSString *const VENUE_NAME = @"venue-name";
 
-NSString *const venueChainIds = @"venue-chain-ids";
+NSString *const VENUE_CHAIN_IDS = @"venue-chain-ids";
 
-NSString *const visitId = @"visit-id";
+NSString *const VISIT_ID = @"visit-id";
 
-NSString *const visitType = @"visit-type";
+NSString *const VISIT_TYPE = @"visit-type";
 
-NSString *const zipCode = @"zip-code";
+NSString *const ZIP_CODE = @"zip-code";
 
-@end
 

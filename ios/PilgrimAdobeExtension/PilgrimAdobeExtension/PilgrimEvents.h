@@ -1,10 +1,4 @@
-//
-//  PilgrimEvents.h
-//  PilgrimAdobeExtension
-//
-//  Created by Carlos Reyes  on 4/15/19.
 //  Copyright © 2019 Foursquare. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 #import <ACPCore/ACPCore.h>

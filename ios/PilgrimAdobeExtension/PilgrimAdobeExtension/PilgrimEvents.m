@@ -1,10 +1,4 @@
-//
-//  PilgrimEvents.m
-//  PilgrimAdobeExtension
-//
-//  Created by Carlos Reyes  on 4/15/19.
 //  Copyright © 2019 Foursquare. All rights reserved.
-//
 
 #import "PilgrimEvents.h"
 #import "PilgrimConstants.h"
@@ -13,12 +7,12 @@
 
 + (ACPExtensionEvent *)getVisitEventFor:(FSQPVisit *)visit name:(NSString *)name eventType:(NSString *)eventType vistType:(NSString *)visitType {
     NSMutableDictionary* eventData = [self buildBasicVisitEventFor:visit];
-    eventData[visitType] = visitType;
-    return [self buildAdobeEventWith:name type:eventType source:eventSource data:eventData];
+    eventData[VISIT_TYPE] = visitType;
+    return [self buildAdobeEventWith:name type:eventType source:EVENT_SOURCE data:eventData];
 }
 
 + (ACPExtensionEvent *)getGeofenceEventFor:(FSQPGeofenceEvent *)geofence name:(NSString *)name type:(NSString *)type {
-    return [self buildAdobeEventWith:name type:type source:eventSource data:[self buildBasicGeofenceEventFor:geofence]];
+    return [self buildAdobeEventWith:name type:type source:EVENT_SOURCE data:[self buildBasicGeofenceEventFor:geofence]];
 }
 
 + (ACPExtensionEvent *)buildAdobeEventWith:(NSString *)name type:(NSString *)type source:(NSString *)source data:(nullable NSDictionary *)data {
@@ -37,35 +31,35 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM-dd-YYYY HH:mm:ss zzz"];
 
-    eventData[visitId] = visit.pilgrimVisitId;
-    eventData[confidence] = [NSNumber numberWithInt:visit.confidence];
-    eventData[lat] = [NSNumber numberWithDouble:visit.arrivalLocation.coordinate.latitude];
-    eventData[lng] = [NSNumber numberWithDouble:visit.arrivalLocation.coordinate.longitude];
-    eventData[timestamp] = [dateFormatter stringFromDate:visit.arrivalDate];
-    eventData[locationType] = [NSNumber numberWithInt:visit.locationType];
+    eventData[VISIT_ID] = visit.pilgrimVisitId;
+    eventData[CONFIDENCE] = [NSNumber numberWithInt:visit.confidence];
+    eventData[LAT] = [NSNumber numberWithDouble:visit.arrivalLocation.coordinate.latitude];
+    eventData[LNG] = [NSNumber numberWithDouble:visit.arrivalLocation.coordinate.longitude];
+    eventData[TIMESTAMP] = [dateFormatter stringFromDate:visit.arrivalDate];
+    eventData[LOCATION_TYPE] = [NSNumber numberWithInt:visit.locationType];
 
     if (visit.venue != nil) {
         FSQPVenue* venue = visit.venue;
-        eventData[venueId] = venue.foursquareID;
-        eventData[venueName] = venue.name;
-        eventData[address] = venue.locationInformation.address;
-        eventData[crossStreet] = venue.locationInformation.crossStreet;
-        eventData[city] = venue.locationInformation.city;
-        eventData[state] = venue.locationInformation.state;
-        eventData[zipCode] = venue.locationInformation.postalCode;
-        eventData[country] = venue.locationInformation.country;
-        eventData[primaryCategoryId] = venue.primaryCategory.foursquareID;
-        eventData[primaryChainName] = venue.primaryCategory.name;
-        eventData[probability] = venue.probability;
-        eventData[primaryChainId] = venue.chains.firstObject.foursquareID;
-        eventData[primaryChainName] = venue.chains.firstObject.name;
+        eventData[VENUE_ID] = venue.foursquareID;
+        eventData[VENUE_NAME] = venue.name;
+        eventData[ADDRESS] = venue.locationInformation.address;
+        eventData[CROSSSTREET] = venue.locationInformation.crossStreet;
+        eventData[CITY] = venue.locationInformation.city;
+        eventData[STATE] = venue.locationInformation.state;
+        eventData[ZIP_CODE] = venue.locationInformation.postalCode;
+        eventData[COUNTRY] = venue.locationInformation.country;
+        eventData[PRIMARY_CATEGORY_ID] = venue.primaryCategory.foursquareID;
+        eventData[PRIMARY_CATEGORY_NAME] = venue.primaryCategory.name;
+        eventData[PROBABILITY] = venue.probability;
+        eventData[PRIMARY_CHAIN_ID] = venue.chains.firstObject.foursquareID;
+        eventData[PRIMARY_CHAIN_NAME] = venue.chains.firstObject.name;
 
         if (venue.hierarchy.firstObject != nil) {
             FSQPVenue* superVenue = venue.hierarchy.firstObject;
-            eventData[supervenueId] = superVenue.foursquareID;
-            eventData[supervenueName] = superVenue.name;
-            eventData[supervenuePrimaryCategoryId] = superVenue.categories.firstObject.foursquareID;
-            eventData[supervenuePrimaryCategoryName] = superVenue.categories.firstObject.name;
+            eventData[SUPERVENUE_ID] = superVenue.foursquareID;
+            eventData[SUPERVENUE_NAME] = superVenue.name;
+            eventData[SUPERVENUE_PRIMARY_CATEGORY_ID] = superVenue.categories.firstObject.foursquareID;
+            eventData[SUPERVENUE_PRIMARY_CATEGORY_NAME] = superVenue.categories.firstObject.name;
         }
     }
 
@@ -75,12 +69,12 @@
 + (NSMutableDictionary<NSString*, id> *)buildBasicGeofenceEventFor:(FSQPGeofenceEvent *)geofence {
     NSMutableDictionary* eventData = [[NSMutableDictionary alloc] init];
 
-    eventData[geofenceEventType] = [NSNumber numberWithInt:geofence.eventType];
-    eventData[eventLat] = [NSNumber numberWithDouble:geofence.location.coordinate.latitude];
-    eventData[eventLng] = [NSNumber numberWithDouble:geofence.location.coordinate.longitude];
-    eventData[partnerVenueId] = geofence.partnerVenueID;
-    eventData[venueChainIds] = [[geofence.venue.chains valueForKey:@"foursquareID"] componentsJoinedByString:@","];
-    eventData[catergoryIds] = [[geofence.venue.categories valueForKey:@"foursquareID"] componentsJoinedByString:@","];
+    eventData[GEOFENCE_EVENT_TYPE] = [NSNumber numberWithInt:geofence.eventType];
+    eventData[EVENT_LAT] = [NSNumber numberWithDouble:geofence.location.coordinate.latitude];
+    eventData[EVENT_LNG] = [NSNumber numberWithDouble:geofence.location.coordinate.longitude];
+    eventData[PARTNER_VENUE_ID] = geofence.partnerVenueID;
+    eventData[VENUE_CHAIN_IDS] = [[geofence.venue.chains valueForKey:@"foursquareID"] componentsJoinedByString:@","];
+    eventData[CATERGORY_IDS] = [[geofence.venue.categories valueForKey:@"foursquareID"] componentsJoinedByString:@","];
 
     return eventData;
 

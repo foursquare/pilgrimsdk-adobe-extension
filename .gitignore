@@ -69,3 +69,7 @@ fastlane/test_output
 fastlane/readme.md
 
 *.zip
+
+# Pod Files
+
+/ios/PilgrimAdobeExtension/Pods

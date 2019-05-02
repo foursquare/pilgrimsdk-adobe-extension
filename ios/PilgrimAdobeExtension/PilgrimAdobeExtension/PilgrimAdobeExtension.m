@@ -10,7 +10,7 @@
 @implementation PilgrimAdobeExtension
 
 - (nullable NSString*) name {
-    return @"com.foursquare.pilgrim";
+    return [[NSBundle mainBundle] bundleIdentifier];
 }
 
 - (NSString *)version {
@@ -21,7 +21,7 @@
     NSLog(@"Unexpected error %@", error.localizedDescription);
 }
 
-- (instancetype) init {
+- (instancetype)init {
     if (self = [super init]) {
         self.didRegisterPilgrim = false;
 
@@ -50,24 +50,24 @@
 }
 
 - (void)pilgrimManager:(nonnull FSQPPilgrimManager *)pilgrimManager handleVisit:(nonnull FSQPVisit *)visit {
-    visit.hasDeparted ? [self sendAdobeEventWith:[PilgrimEvents getVisitEventFor:visit name:departureEventName eventType:departureEventType vistType:departure] eventType:@"visit departure"] : [self sendAdobeEventWith:[PilgrimEvents getVisitEventFor:visit name:arrivalEventName eventType:arrivalEventType vistType:arrival] eventType:@"visit arrival"];
+    visit.hasDeparted ? [self sendAdobeEventWith:[PilgrimEvents getVisitEventFor:visit name:DEPARTURE_EVENT_NAME eventType:DEPARTURE_EVENT_TYPE vistType:DEPARTURE] eventType:@"visit departure"] : [self sendAdobeEventWith:[PilgrimEvents getVisitEventFor:visit name:ARRIVAL_EVENT_NAME eventType:ARRIVAL_EVENT_TYPE vistType:ARRIVAL] eventType:@"visit arrival"];
 }
 
 - (void)pilgrimManager:(FSQPPilgrimManager *)pilgrimManager handleBackfillVisit:(FSQPVisit *)visit {
-    [self sendAdobeEventWith:[PilgrimEvents getVisitEventFor:visit name:historicalEventName eventType:historicalEventType vistType:historical] eventType:@"historical"];
+    [self sendAdobeEventWith:[PilgrimEvents getVisitEventFor:visit name:HISTORICAL_EVENT_NAME eventType:HISTORICAL_EVENT_TYPE vistType:HISTORICAL] eventType:@"historical"];
 }
 
 - (void)pilgrimManager:(FSQPPilgrimManager *)pilgrimManager handleGeofenceEvents:(NSArray<FSQPGeofenceEvent *> *)geofenceEvents {
     for (FSQPGeofenceEvent* geofence in geofenceEvents) {
         switch (geofence.eventType) {
             case FSQPGeofenceEventTypeEntrance:
-                [self sendAdobeEventWith:[PilgrimEvents getGeofenceEventFor:geofence name:geofenceEnterEventName type:geofenceEnterEventType] eventType:@"geofence entrance"];
+                [self sendAdobeEventWith:[PilgrimEvents getGeofenceEventFor:geofence name:GEOFENCE_ENTER_EVENT_NAME type:GEOFENCE_ENTER_EVENT_TYPE] eventType:@"geofence entrance"];
             case FSQPGeofenceEventTypeDwell:
-                [self sendAdobeEventWith:[PilgrimEvents getGeofenceEventFor:geofence name:geofenceDwellEventName type:geofenceDwellEventType] eventType:@"geofence dwell"];
+                [self sendAdobeEventWith:[PilgrimEvents getGeofenceEventFor:geofence name:GEOFENCE_DWELL_EVENT_NAME type:GEOFENCE_DWELL_EVENT_TYPE] eventType:@"geofence dwell"];
             case FSQPGeofenceEventTypeVenueConfirmation:
-                [self sendAdobeEventWith:[PilgrimEvents getGeofenceEventFor:geofence name:geofenceConfirmEventName type:geofenceConfirmEventType] eventType:@"geofence confirm"];
+                [self sendAdobeEventWith:[PilgrimEvents getGeofenceEventFor:geofence name:GEOFENCE_CONFIRM_EVENT_NAME type:GEOFENCE_CONFIRM_EVENT_TYPE] eventType:@"geofence confirm"];
             case FSQPGeofenceEventTypeExit:
-                [self sendAdobeEventWith:[PilgrimEvents getGeofenceEventFor:geofence name:geofenceExitEventName type:geofenceExitEventType] eventType:@"geofence exit"];
+                [self sendAdobeEventWith:[PilgrimEvents getGeofenceEventFor:geofence name:GEOFENCE_EXIT_EVENT_NAME type:GEOFENCE_EXIT_EVENT_TYPE] eventType:@"geofence exit"];
             default:
                 break;
         }
@@ -84,8 +84,8 @@
 }
 
 - (void)processEventsWith: (ACPExtensionEvent *)event {
-        NSError *error = nil;
-        NSDictionary *configSharedState = [self.api getSharedEventState:@"com.adobe.module.configuration" event:event error:&error];
+    NSError *error = nil;
+    NSDictionary *configSharedState = [self.api getSharedEventState:@"com.adobe.module.configuration" event:event error:&error];
 
     if([configSharedState objectForKey:@"pilgrimConsumerKey"] && !self.didRegisterPilgrim) {
         FSQPPilgrimManager* pilgrimManager = [FSQPPilgrimManager sharedManager];

@@ -1,117 +1,111 @@
-//
-//  PilgrimConstants.h
-//  PilgrimAdobeExtension
-//
-//  Created by Carlos Reyes  on 4/15/19.
 //  Copyright © 2019 Foursquare. All rights reserved.
-//
+
+#ifndef PilgrimConstants_h
+#define PilgrimConstants_h
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
-@interface PilgrimConstants : NSObject
-extern NSString *const address;
+FOUNDATION_EXPORT NSString *const ADDRESS;
 
-extern NSString *const arrival;
+FOUNDATION_EXPORT NSString *const ARRIVAL;
 
-extern NSString *const arrivalEventName;
+FOUNDATION_EXPORT NSString *const ARRIVAL_EVENT_NAME;
 
-extern NSString *const arrivalEventType;
+FOUNDATION_EXPORT NSString *const ARRIVAL_EVENT_TYPE;
 
-extern NSString *const catergoryIds;
+FOUNDATION_EXPORT NSString *const CATERGORY_IDS;
 
-extern NSString *const city;
+FOUNDATION_EXPORT NSString *const CITY;
 
-extern NSString *const confidence;
+FOUNDATION_EXPORT NSString *const CONFIDENCE;
 
-extern NSString *const country;
+FOUNDATION_EXPORT NSString *const COUNTRY;
 
-extern NSString *const crossStreet;
+FOUNDATION_EXPORT NSString *const CROSSSTREET;
 
-extern NSString *const departure;
+FOUNDATION_EXPORT NSString *const DEPARTURE;
 
-extern NSString *const departureEventName;
+FOUNDATION_EXPORT NSString *const DEPARTURE_EVENT_NAME;
 
-extern NSString *const departureEventType;
+FOUNDATION_EXPORT NSString *const DEPARTURE_EVENT_TYPE;
 
-extern NSString *const eventLat;
+FOUNDATION_EXPORT NSString *const EVENT_LAT;
 
-extern NSString *const eventLng;
+FOUNDATION_EXPORT NSString *const EVENT_LNG;
 
-extern NSString *const eventSource;
+FOUNDATION_EXPORT NSString *const EVENT_SOURCE;
 
-extern NSString *const geofenceEventType;
+FOUNDATION_EXPORT NSString *const GEOFENCE_EVENT_TYPE;
 
-extern NSString *const geofenceEnterEventName;
+FOUNDATION_EXPORT NSString *const GEOFENCE_ENTER_EVENT_NAME;
 
-extern NSString *const geofenceEnterEventType;
+FOUNDATION_EXPORT NSString *const GEOFENCE_ENTER_EVENT_TYPE;
 
-extern NSString *const geofenceDwellEventName;
+FOUNDATION_EXPORT NSString *const GEOFENCE_DWELL_EVENT_NAME;
 
-extern NSString *const geofenceDwellEventType;
+FOUNDATION_EXPORT NSString *const GEOFENCE_DWELL_EVENT_TYPE;
 
-extern NSString *const geofenceConfirmEventName;
+FOUNDATION_EXPORT NSString *const GEOFENCE_CONFIRM_EVENT_NAME;
 
-extern NSString *const geofenceConfirmEventType;
+FOUNDATION_EXPORT NSString *const GEOFENCE_CONFIRM_EVENT_TYPE;
 
-extern NSString *const geofenceExitEventName;
+FOUNDATION_EXPORT NSString *const GEOFENCE_EXIT_EVENT_NAME;
 
-extern NSString *const geofenceExitEventType;
+FOUNDATION_EXPORT NSString *const GEOFENCE_EXIT_EVENT_TYPE;
 
-extern NSString *const geofenceLat;
+FOUNDATION_EXPORT NSString *const GEOFENCE_LAT;
 
-extern NSString *const geofenceLng;
+FOUNDATION_EXPORT NSString *const GEOFENCE_LNG;
 
-extern NSString *const historical;
+FOUNDATION_EXPORT NSString *const HISTORICAL;
 
-extern NSString *const historicalEventName;
+FOUNDATION_EXPORT NSString *const HISTORICAL_EVENT_NAME;
 
-extern NSString *const historicalEventType;
+FOUNDATION_EXPORT NSString *const HISTORICAL_EVENT_TYPE;
 
-extern NSString *const lat;
+FOUNDATION_EXPORT NSString *const LAT;
 
-extern NSString *const lng;
+FOUNDATION_EXPORT NSString *const LNG;
 
-extern NSString *const locationType;
+FOUNDATION_EXPORT NSString *const LOCATION_TYPE;
 
-extern NSString *const partnerVenueId;
+FOUNDATION_EXPORT NSString *const PARTNER_VENUE_ID;
 
-extern NSString *const primaryCategoryId;
+FOUNDATION_EXPORT NSString *const PRIMARY_CATEGORY_ID;
 
-extern NSString *const primaryCategoryName;
+FOUNDATION_EXPORT NSString *const PRIMARY_CATEGORY_NAME;
 
-extern NSString *const primaryChainId;
+FOUNDATION_EXPORT NSString *const PRIMARY_CHAIN_ID;
 
-extern NSString *const primaryChainName;
+FOUNDATION_EXPORT NSString *const PRIMARY_CHAIN_NAME;
 
-extern NSString *const probability;
+FOUNDATION_EXPORT NSString *const PROBABILITY;
 
-extern NSString *const radius;
+FOUNDATION_EXPORT NSString *const RADIUS;
 
-extern NSString *const state;
+FOUNDATION_EXPORT NSString *const STATE;
 
-extern NSString *const supervenueId;
+FOUNDATION_EXPORT NSString *const SUPERVENUE_ID;
 
-extern NSString *const supervenueName;
+FOUNDATION_EXPORT NSString *const SUPERVENUE_NAME;
 
-extern NSString *const supervenuePrimaryCategoryId;
+FOUNDATION_EXPORT NSString *const SUPERVENUE_PRIMARY_CATEGORY_ID;
 
-extern NSString *const supervenuePrimaryCategoryName;
+FOUNDATION_EXPORT NSString *const SUPERVENUE_PRIMARY_CATEGORY_NAME;
 
-extern NSString *const timestamp;
+FOUNDATION_EXPORT NSString *const TIMESTAMP;
 
-extern NSString *const venueId;
+FOUNDATION_EXPORT NSString *const VENUE_ID;
 
-extern NSString *const venueName;
+FOUNDATION_EXPORT NSString *const VENUE_NAME;
 
-extern NSString *const venueChainIds;
+FOUNDATION_EXPORT NSString *const VENUE_CHAIN_IDS;
 
-extern NSString *const visitId;
+FOUNDATION_EXPORT NSString *const VISIT_ID;
 
-extern NSString *const visitType;
+FOUNDATION_EXPORT NSString *const VISIT_TYPE;
 
-extern NSString *const zipCode;
-@end
+FOUNDATION_EXPORT NSString *const ZIP_CODE;
 
-NS_ASSUME_NONNULL_END
+#endif
