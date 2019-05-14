@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+  compileSdkVersion versions.sdk.compile
+
+  defaultConfig {
+    minSdkVersion versions.sdk.min
+    targetSdkVersion versions.sdk.target
+  }
+
+  lintOptions {
+    textReport true
+    textOutput 'stdout'
+    checkReleaseBuilds true
+    disable 'InvalidPackage'
+    fatal 'UnusedResources'
+  }
+
+  buildTypes {
+    debug {
+      minifyEnabled false
+      // This is needed because of all the methods the test
+      // dependencies add to the integration test apk.
+      // This does not affect our library release.
+      multiDexEnabled true
+      testCoverageEnabled true
+    }
+
+    release {
+      minifyEnabled false
+      shrinkResources false
+    }
+  }
+
+  variantFilter {
+    if (it.buildType.name == 'debug') {
+      it.ignore = true
+    }
+  }
+}
+
+dependencies {
+  implementation deps.pilgrim.pilgrimSdk
+  implementation deps.pilgrim.pilgrimSdkDebugging
+
+  implementation deps.kotlin.stdlib
+
+  implementation deps.adobe.core
+}

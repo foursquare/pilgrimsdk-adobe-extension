@@ -1,0 +1,82 @@
+buildscript {
+    ext.kotlin_version = '1.3.21'
+
+    apply from: "${rootDir}/scripts/gradle/versions.gradle"
+
+    dependencies {
+        classpath deps.android.plugin
+        classpath deps.kotlin.plugin
+        classpath deps.tasktree
+        classpath deps.dexcount
+        classpath deps.gmsGoogleServices
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+}
+
+apply plugin: "com.dorongold.task-tree"
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://foursquare.jfrog.io/foursquare/libs-public/' }
+        maven { url "https://jitpack.io" }
+    }
+
+    // Force all of the primary support libraries to use the same version.
+    // Thanks Jake Wharton:
+    // https://github.com/JakeWharton/SdkSearch/blob/e30da4a73c76693c9c3bde0d7aa36ebe9e38521f/build.gradle#L133-L143
+    configurations.all {
+        resolutionStrategy {
+            eachDependency { details ->
+                if (details.requested.toString().contains("multidex")) {
+                    // ignore
+                } else if (details.requested.group == 'com.android.support') {
+                    details.useVersion versions.supportLib
+                }
+                if (details.requested.group == 'android.arch.core'
+                        && !details.requested.name.contains('android.arch.core') ) {
+                    details.useVersion "1.1.0"
+                }
+            }
+        }
+    }
+
+    tasks.withType(Test) { task ->
+        if (gradle.startParameter.consoleOutput == ConsoleOutput.Plain) {   //on ci we will see tests as they run
+            task.afterTest { TestDescriptor td, TestResult tr ->
+                logger.lifecycle("[${tr.resultType}] - ${td.className}#${td.name}")
+
+            }
+            task.testLogging.exceptionFormat = 'full'
+        }
+
+        task.afterSuite { desc, result ->
+            if (!desc.parent) { // will match the outermost suite
+                logger.lifecycle("Task {} results: {} ({} tests, {} successes, {} failures, {} skipped)", task.path,
+                        result.resultType, result.testCount, result.successfulTestCount, result.failedTestCount, result.skippedTestCount)
+            }
+        }
+    }
+}
+
+// An alias that we can use to upload all the artifacts we always upload
+task publishArtifacts(type: GradleBuild) {
+    // Copy the start params to the child tasks
+    startParameter.projectProperties = project.gradle.startParameter.projectProperties
+
+    // Tasks to run
+    tasks = [
+            "clean",
+            "test",
+            ":pilgrim:pilgrimsdk-library:uploadArchives",
+            ":pilgrim:pilgrimsdk-debugging:uploadArchives",
+    ]
+}

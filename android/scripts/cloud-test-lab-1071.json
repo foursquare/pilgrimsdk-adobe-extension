@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cloud-test-lab-1071",
+  "private_key_id": "9be9594caecb1cb781b8bc8ad1cdfdd9ea1772ba",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDlx0LAFoVKQFKv\n06oyGvJOFRcRiK3jDR/SxJaqYrgZEGJY848FiU/5KtIBBwwwGgsb8pJq5Q2WJGQM\nkDhYyrEwlRMat6FYgPvP+bMtS/ELhaUScXLai63XJYfsyxtKQ093sTIHCWqyvLfz\nNs4A5RXmzLgcKpTagyoHRRsT3JUbjYNhBjhQfOmqjTnbuyx1XLH8RtMAKuVxqIPs\nZ98QNz2aXRY7i8Ec+oGzledYGi09lBSm+ceqshnVbkFatiDRpMlnURtxgY8bl8zU\nBwV7/ZabMCqMLKl8P3Y9OCNtymBJs1HO589w7JBcetoVQMRyvN2prC76QUaKsiDX\nCiwrVHZXAgMBAAECggEAESU9AHMg8p+gGK/Ozrq4aXkk/1FXYE5vZhCQCYC6Q5Lq\nzVmT/d7EHk/CqDVfBHI9Cyw4UeYFJunqPHT0Fc2lSrG+lJf7kxlBl1nTgKxelsFP\nLI27yAqNWzUMUm/8kx44qzHupxwqkp6Gv1nPv1aL7tMU/dnZ9GaLJH9UlbcE7UkN\n8/VOX0HPMjI44NSkABpY9Tbgb31zQ5rUJZnnIhLXRbuwk9w91spEytMOZTzpujNY\nG0biwp/Na5b98tpPyrbKf5FsKxxuo07InA/97o88VX9OtJnzlFi2qEw9YqgIZzey\nbKcLfiau6AJfv2mvbzcSn/ieFc3Oet7nvIBqfZBCiQKBgQDzZB3Hk6lKu4Z5spS0\nSINUcntcD9Flg5fbmMv/GcC02Wcpv4TRRSD7L2Gjlqoc7gImzoyT7Wl9N8Gjpp8W\np6x5+SmvCwrPwbkBfdg53MsvgcWjOuRynScgsaEdJ7iSHwaLNKIKIGrrtxmdVw9Q\nRpKQTtTusdkAMy8ZgncdDbZIHQKBgQDxrpxenbizK/iHURjmF2NzMSpEYaEwjfpO\niPYDim+Nt8Ugziby3ggjcfaIcZ6wJi2/TjasPg4dL9rKpgPoqKrXutb/MSanvpmq\nbWJRc28vqiESTMxIbKS8TpOeD8LZOxN2aolbYUp8D0y/+T3maj8KfdxIwHtmH91v\nnvHdVRG2AwKBgQDvh1rrW72i55R7Vi2Ukzx0MkqHGqYYAn7DxccVYlHNaZtmca4T\nibXgngu4RAFcgTuq12Fv/5jue53dIZC1agSK8ZR9SR+1wNAC0MeogkuQkGVhtAa5\naUHlogqON9YkL9ZvzzedQbQYEFVsDA7tENcSoBJcarjFwpmawFPbSvBWXQKBgHMk\nRD1TmSZLgZk+SsV8SRYdS0zO0pOmYKU/3S0srB7xeYo6jRXSMEBq0BCLSRYU6mCl\nK6j9242OOgen9l7G1LX4vutPiGIMjXtDp760ZzlnLWBhlEXA9O795Jg+XA9QdOJK\nuWv+uxTF2UPww8vdvHEMK4HBqkiqT74ZFJPlLo3vAoGBAMxq+oA4uR+wz9K2odLO\nWcyWBZVJZNZluiTIlKHIui+73bm3ov6lvGRcM0UFOUN+VqUw9bYwl6O3zJRcBLWN\nn8iolt+g+2NUCmHBG0l5yDu2KWa2QwepK6nnzE79eo5AkXLg4EXJk8YOQFtCwJXw\nSAMAsToFsMT4M43aUdi2YMWD\n-----END PRIVATE KEY-----\n",
+  "client_email": "cloud-test-lab-1071@appspot.gserviceaccount.com",
+  "client_id": "103546710842700124057",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloud-test-lab-1071%40appspot.gserviceaccount.com"
+}
