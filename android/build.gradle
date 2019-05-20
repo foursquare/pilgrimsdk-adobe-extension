@@ -6,9 +6,6 @@ buildscript {
     dependencies {
         classpath deps.android.plugin
         classpath deps.kotlin.plugin
-        classpath deps.tasktree
-        classpath deps.dexcount
-        classpath deps.gmsGoogleServices
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 
@@ -19,8 +16,6 @@ buildscript {
         maven { url 'https://plugins.gradle.org/m2/' }
     }
 }
-
-apply plugin: "com.dorongold.task-tree"
 
 allprojects {
     repositories {
@@ -48,35 +43,4 @@ allprojects {
             }
         }
     }
-
-    tasks.withType(Test) { task ->
-        if (gradle.startParameter.consoleOutput == ConsoleOutput.Plain) {   //on ci we will see tests as they run
-            task.afterTest { TestDescriptor td, TestResult tr ->
-                logger.lifecycle("[${tr.resultType}] - ${td.className}#${td.name}")
-
-            }
-            task.testLogging.exceptionFormat = 'full'
-        }
-
-        task.afterSuite { desc, result ->
-            if (!desc.parent) { // will match the outermost suite
-                logger.lifecycle("Task {} results: {} ({} tests, {} successes, {} failures, {} skipped)", task.path,
-                        result.resultType, result.testCount, result.successfulTestCount, result.failedTestCount, result.skippedTestCount)
-            }
-        }
-    }
-}
-
-// An alias that we can use to upload all the artifacts we always upload
-task publishArtifacts(type: GradleBuild) {
-    // Copy the start params to the child tasks
-    startParameter.projectProperties = project.gradle.startParameter.projectProperties
-
-    // Tasks to run
-    tasks = [
-            "clean",
-            "test",
-            ":pilgrim:pilgrimsdk-library:uploadArchives",
-            ":pilgrim:pilgrimsdk-debugging:uploadArchives",
-    ]
 }

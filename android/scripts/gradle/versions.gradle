@@ -6,28 +6,8 @@ ext.versions = [
         effectiveMin: 16,
         sampleTarget: 28
     ],
-    firebase: [
-        appIndexing: "16.0.2",
-        core: "16.0.4",
-        messaging: "17.3.3",
-        remoteConfig: "16.0.1"
-    ],
     kotlin: "1.3.21",
-    gmsGoogleServices: "4.0.1",
-    playServices: "16.0.0",
     supportLib: "27.1.1",
-    androidTest: "1.0.2",
-    espresso: "3.0.2",
-    uiAutomator: "2.1.3",
-    errorProne: "2.2.0",
-    okHttp: "3.9.0",
-    robolectric: "4.1",
-    restMock: "0.3.1",
-    lint: "26.1.3", // MUST be updated in sync with the deps.android.plugin version. Must be exactly 23.0.0 or higher than that version.
-    arch: "1.1.1",
-    room: "1.1.1",
-    threeTenABP: "1.1.0",
-    dagger: "2.14.1",
     pilgrimSdk: "2.2.0"
 ]
 
@@ -39,137 +19,14 @@ ext.deps = [
     ],
     android: [
         plugin: 'com.android.tools.build:gradle:3.1.3', // MUST be updated in sync with the versions.lint version, which must be 23.0.0 higher than this.
-        multidex: 'com.android.support:multidex:1.0.3'
     ],
-    appboy: 'com.appboy:android-sdk-ui:1.15.1',
-    arch: [
-        room: [
-            runtime: "android.arch.persistence.room:runtime:$versions.room",
-            compiler: "android.arch.persistence.room:compiler:$versions.room",
-            rxjava: "android.arch.persistence.room:rxjava2:$versions.room",
-        ],
-        lifecycle: [
-            runtime: "android.arch.lifecycle:runtime:$versions.arch",
-            extensions: "android.arch.lifecycle:extensions:$versions.arch",
-            compiler: "android.arch.lifecycle:compiler:$versions.arch"
-        ],
-        test: "android.arch.core:core-testing:$versions.arch",
-    ],
-    butterKnife: 'com.jakewharton:butterknife:7.0.1',
-    chuck: 'com.readystatesoftware.chuck:library:1.0.4',
-    dagger: [
-        dagger: "com.google.dagger:dagger:$versions.dagger",
-        android: "com.google.dagger:dagger-android:$versions.dagger",
-        androidProcessor: "com.google.dagger:dagger-android-processor:$versions.dagger",
-        androidSupport: "com.google.dagger:dagger-android-support:$versions.dagger",
-        compiler: "com.google.dagger:dagger-compiler:$versions.dagger"
-    ],
-    dexcount: "com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.8.3",
-    diskLruCache: 'com.jakewharton:disklrucache:2.0.2',
-    errorProne: [
-        build: [
-            core: "com.google.errorprone:error_prone_core:$versions.errorProne"
-        ],
-        compileOnly: [
-            annotations: "com.google.errorprone:error_prone_annotations:$versions.errorProne"
-        ],
-        plugin: 'net.ltgt.gradle:gradle-errorprone-plugin:0.0.13'
-    ],
-    evernoteJob: "com.evernote:android-job:1.3.0-rc1-fsq",
-    fabric: [
-        plugin: "io.fabric.tools:gradle:1.24.4",
-        crashlytics: 'com.crashlytics.sdk.android:crashlytics:2.7.1@aar'
-    ],
-    firebase: [
-        remoteConfig: "com.google.firebase:firebase-config:$versions.firebase.remoteConfig",
-        appIndexing: "com.google.firebase:firebase-appindexing:$versions.firebase.appIndexing",
-        core: "com.google.firebase:firebase-core:$versions.firebase.core",
-        messaging: "com.google.firebase:firebase-messaging:$versions.firebase.messaging"
-    ],
-    glide: 'com.github.bumptech.glide:glide:3.8.0',
-    glideOkHttp: 'com.github.bumptech.glide:okhttp-integration:1.5.0@aar',
-    gmsGoogleServices: "com.google.gms:google-services:$versions.gmsGoogleServices",
-    gson: 'com.google.code.gson:gson:2.8.2',
-
-    iterable: "com.iterable:iterableapi:3.0.0",
-    jacoco: "com.dicedmelon.gradle:jacoco-android:0.1.3",
-    joda: 'joda-time:joda-time:2.9.9',
     junit: 'junit:junit:4.12',
     kotlin: [
         plugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
         stdlib: "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin",
-        reflect: "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlin",
-        test: "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
     ],
-    lint: [
-        api: "com.android.tools.lint:lint-api:$versions.lint",
-        checks: "com.android.tools.lint:lint-checks:$versions.lint",
-        engine: "com.android.tools.lint:lint:$versions.lint",
-        testing: "com.android.tools.lint:lint-tests:$versions.lint",
-    ],
-    localytics: 'com.localytics.android:library:4.5.1',
-    okHttp: "com.squareup.okhttp3:okhttp:$versions.okHttp",
-    okHttpLogger: "com.squareup.okhttp3:logging-interceptor:$versions.okHttp",
-    okHttpMockWebserver: "com.squareup.okhttp3:mockwebserver:$versions.okHttp",
     pilgrim: [
         pilgrimSdk: "com.foursquare:pilgrimsdk:$versions.pilgrimSdk",
         pilgrimSdkDebugging: "com.foursquare:pilgrimsdk-debugging:$versions.pilgrimSdk"
-    ],
-    playPublisher: 'com.github.triplet.gradle:play-publisher:1.2.0',
-    playServices: [
-        adsId: "com.google.android.gms:play-services-ads-identifier:$versions.playServices",
-        basement: "com.google.android.gms:play-services-basement:$versions.playServices",
-        base: "com.google.android.gms:play-services-base:$versions.playServices",
-        gcm: "com.google.android.gms:play-services-gcm:$versions.playServices",
-        location: "com.google.android.gms:play-services-location:$versions.playServices",
-        maps: "com.google.android.gms:play-services-maps:$versions.playServices",
-    ],
-    processPhoenix: 'com.jakewharton:process-phoenix:2.0.0',
-    rx: [
-        android: 'io.reactivex:rxandroid:1.2.1',
-        java: 'io.reactivex:rxjava:1.3.3',
-        proguardRules: "com.artemzin.rxjava:proguard-rules:1.3.3.0",
-        interop: "com.github.akarnokd:rxjava2-interop:0.13.2",
-    ],
-    sonarqube: "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2",
-    stethoOkHttp: 'com.facebook.stetho:stetho-okhttp3:1.5.0',
-    supportLib: [
-        appCompat: "com.android.support:appcompat-v7:$versions.supportLib",
-        cardView: "com.android.support:cardview-v7:$versions.supportLib",
-        constraintLayout: "com.android.support.constraint:constraint-layout:1.1.2",
-        customTabs: "com.android.support:customtabs:$versions.supportLib",
-        design: "com.android.support:design:$versions.supportLib",
-        recyclerView: "com.android.support:recyclerview-v7:$versions.supportLib",
-        percent: "com.android.support:percent:$versions.supportLib",
-        preference: "com.android.support:preference-v14:$versions.supportLib",
-        v4: "com.android.support:support-v4:$versions.supportLib",
-    ],
-    tasktree: 'gradle.plugin.com.dorongold.plugins:task-tree:1.3',
-    telescope: 'com.mattprecious.telescope:telescope:2.1.0',
-    testing: [
-        android: "com.android.tools:testutils:$versions.lint",
-        supportTesting: 'com.android.support.test:testing-support-lib:0.1',
-        uiautomator: "com.android.support.test.uiautomator:uiautomator-v18:$versions.uiAutomator",
-        rules: "com.android.support.test:rules:$versions.androidTest",
-        runner: "com.android.support.test:runner:$versions.androidTest",
-        espressoCore: "com.android.support.test.espresso:espresso-core:$versions.espresso",
-        espressoIntents: "com.android.support.test.espresso:espresso-intents:$versions.espresso",
-        uiAutomator: "com.android.support.test.uiautomator:uiautomator-v18:$versions.uiAutomator",
-        junit: "junit:junit:4.12",
-        mockito: 'org.mockito:mockito-core:2.23.0',
-        mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0",
-        mockitoAndroid: 'org.mockito:mockito-android:2.6.3',
-        okHttpMockWebserver: "com.squareup.okhttp3:mockwebserver:$versions.okHttp",
-        restMock: "com.github.andrzejchm.RESTMock:android:$versions.restMock",
-        powermock: [
-            junit: 'org.powermock:powermock-module-junit4:2.0.0-RC.3',
-            mockito: "org.powermock:powermock-api-mockito2:2.0.0-RC.3"
-        ],
-        reflections: "org.reflections:reflections:0.9.11",
-        mockitoinline: "org.mockito:mockito-inline:2.8.9",
-        matchers: "org.hamcrest:hamcrest-library:1.3"
-    ],
-    threeTenABP: "com.jakewharton.threetenabp:threetenabp:$versions.threeTenABP",
-    unmock: 'de.mobilej.unmock:UnMockPlugin:0.6.4',
-    work: 'android.arch.work:work-runtime:1.0.0'
+    ]
 ]

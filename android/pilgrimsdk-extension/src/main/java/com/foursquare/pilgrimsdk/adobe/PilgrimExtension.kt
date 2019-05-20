@@ -57,5 +57,15 @@ class PilgrimExtension(extensionApi: ExtensionApi) : Extension(extensionApi) {
                 Log.e("PilgrimExtension", "Failed to register PilgrimExtension")
             }
         }
+
+        fun updateKeys(key: String, secret: String){
+            PilgrimSdk.with(
+                PilgrimSdk.Builder(MobileCore.getApplication())
+                    .logLevel(LogLevel.DEBUG)
+                    .enableDebugLogs()
+                    .consumer(key, secret)
+                    .notificationHandler(PilgrimExtensionNotificationHandler())
+            )
+        }
     }
 }
