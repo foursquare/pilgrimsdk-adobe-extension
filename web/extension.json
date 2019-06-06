@@ -5,6 +5,7 @@
   "version": "2.2.0",
   "description": "Install and configure Foursquare's Pilgrim SDK to get contextual location events to use for your apps.",
   "iconPath": "resources/icons/foursquare.svg",
+  "exchangeUrl": "https://www.adobeexchange.com/experiencecloud.details.101793.html",
   "author": {
     "name": "Foursquare Labs Inc."
   },
