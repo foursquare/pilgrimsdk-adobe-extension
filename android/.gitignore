@@ -15,3 +15,8 @@
 /captures
 .externalNativeBuild
 
+gradle-build-cache
+build-cache/
+build-cache.lock
+
+
